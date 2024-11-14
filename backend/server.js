@@ -20,7 +20,9 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',  // Local development
-    'https://your-frontend-domain.com', // Your frontend production domain
+    'https://erecipehub.netlify.app', // Assuming this is your frontend domain
+    'https://erecipehub.vercel.app',  // If using Vercel
+    '*'  // Temporarily allow all origins while testing
   ],
   credentials: true
 }));
