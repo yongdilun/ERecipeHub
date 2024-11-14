@@ -17,7 +17,13 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',  // Local development
+    'https://your-frontend-domain.com', // Your frontend production domain
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Serve static files
