@@ -1,0 +1,61 @@
+.recipe-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.view-recipe-btn, .edit-recipe-btn {
+  padding: 0.8rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-speed);
+  text-decoration: none;
+}
+
+.view-recipe-btn:hover, .edit-recipe-btn:hover {
+  background: #ff8585; /* Lighter shade of primary color */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  text-align: center;
+  color: var(--text-color);
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+/* Add hover effect to the recipe card */
+.recipe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity var(--transition-speed);
+}
+
+.recipe-card:hover .recipe-overlay {
+  opacity: 1;
+}
+
+/* Add icon styles */
+.recipe-buttons svg {
+  font-size: 1.2rem;
+}
+
+/* Add button text styles */
+.recipe-buttons span {
+  font-weight: 500;
+}

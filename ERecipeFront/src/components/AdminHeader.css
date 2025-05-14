@@ -1,0 +1,129 @@
+.admin-header {
+    background-color: #2c3e50; /* Darker background for admin */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #34495e;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.admin-badge {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.admin-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.admin-nav-links a:hover {
+    color: #3498db;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    border-left: 1px solid #34495e;
+}
+
+.admin-profile span {
+    color: #ecf0f1;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .admin-header {
+        padding: 1rem;
+    }
+
+    .admin-nav-links {
+        gap: 1rem;
+    }
+
+    .admin-profile {
+        margin-left: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .admin-nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .admin-nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+    }
+
+    .admin-profile {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 100%;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+}

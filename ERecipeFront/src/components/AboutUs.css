@@ -1,0 +1,125 @@
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.about-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mission-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mission-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.mission-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.values-section {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.values-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.values-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.values-section li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.values-section li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-container {
+    padding: 1rem;
+  }
+} 

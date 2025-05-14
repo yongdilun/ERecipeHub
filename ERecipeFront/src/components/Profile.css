@@ -1,0 +1,163 @@
+.profile-page {
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.profile-card h2 {
+  color: #2d3436;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateX(10px);
+}
+
+.info-item label {
+  font-weight: 600;
+  min-width: 100px;
+  color: #ff6b6b;
+}
+
+.info-item span {
+  color: #2d3436;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.change-password-button, .logout-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.change-password-button {
+  background: #4ecdc4;
+  color: white;
+}
+
+.change-password-button:hover {
+  background: #45b7af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+}
+
+.logout-button {
+  background: #ff6b6b;
+  color: white;
+}
+
+.logout-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .change-password-button, .logout-button {
+    width: 100%;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section p {
+    font-size: 1rem;
+  }
+}

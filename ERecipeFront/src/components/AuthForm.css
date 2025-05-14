@@ -1,0 +1,184 @@
+/* src/components/AuthForm.css */
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  margin: 2rem auto;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.auth-form-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.auth-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form-container label {
+  font-weight: bold;
+  color: #555;
+}
+
+.auth-form-container input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form-container input:focus {
+  outline: none;
+  border-color: #333; /* Darker gray */
+}
+
+.auth-form-container button {
+  padding: 0.75rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form-container button:hover {
+  background-color: #555; /* Lighter gray */
+}
+
+.auth-form-container p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.auth-form-container p a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-form-container p a:hover {
+  text-decoration: underline;
+}
+
+.auth-form-container .message {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #d32f2f; /* Red color for error messages */
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 300px; /* Adjust width as needed */
+}
+
+.password-feedback {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 0.4em;
+  padding-left: 1.5em;
+  text-align: left;
+}
+
+.password-feedback li {
+  margin-bottom: 0.2em;
+  list-style-type: disc;
+}
+
+/* Style for login prompt message */
+.login-prompt {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #2e7d32; /* Green color for success message */
+  background-color: rgba(255, 255, 255, 0.95); /* Light white background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+}
+
+/* Style only for the login button inside the login prompt */
+.login-prompt .login-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #00796b; /* Teal color */
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-prompt .login-button:hover {
+  background-color: #004d40; /* Darker teal on hover */
+  transform: scale(1.05);
+}
+
+
+/* Style for the success message */
+.message {
+  font-size: 1rem;
+  color: #2e7d32; /* Green color for success */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Disabled state for inputs and buttons */
+.auth-form-container input:disabled,
+.auth-form-container button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading state for buttons */
+.auth-form-container button.loading {
+  position: relative;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.auth-form-container button.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message styles */
+.auth-form-container .error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+}

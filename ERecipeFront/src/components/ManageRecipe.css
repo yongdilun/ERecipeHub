@@ -1,0 +1,582 @@
+.admin-manage-recipe {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.admin-manage-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-recipe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-recipe-header h1 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 2rem;
+}
+
+.admin-action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-edit-button, .admin-delete-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-edit-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.admin-delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.admin-edit-button:hover, .admin-delete-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-recipe-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-recipe-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.admin-recipe-image {
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-recipe-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.admin-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+.admin-recipe-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.admin-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #2c3e50;
+}
+
+.admin-icon {
+    color: #3498db;
+}
+
+.admin-comments-section {
+    padding: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.admin-comments-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.admin-comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-comment {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.admin-highlighted-comment {
+    background-color: #fff3cd;
+    border: 2px solid #ffeeba;
+    animation: highlight-pulse 2s infinite;
+}
+
+@keyframes highlight-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+.admin-comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.admin-comment-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-comment-author {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.admin-comment-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.admin-delete-comment-button {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.admin-delete-comment-button:hover {
+    background-color: #ffebee;
+    transform: scale(1.1);
+}
+
+.admin-comment-content {
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.admin-loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.admin-error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .admin-recipe-main {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-recipe-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-recipe-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .admin-action-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .admin-recipe-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+.admin-report-overlay {
+    display: none;
+}
+
+.admin-report-modal {
+    position: fixed;
+    background: #ffffff;
+    border-radius: 8px;
+    width: 400px;
+    max-height: 80vh;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    user-select: none;
+    transition: height 0.3s ease, width 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.admin-report-modal.minimized {
+    height: 50px !important;
+    width: 250px !important;
+    overflow: hidden;
+}
+
+.admin-report-modal-header {
+    background: #1a237e;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    touch-action: none;
+    border-bottom: 2px solid #0d47a1;
+}
+
+.admin-report-modal-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-report-modal.dragging {
+    opacity: 0.8;
+    transition: none;
+}
+
+.admin-report-modal.dragging * {
+    cursor: grabbing !important;
+}
+
+.admin-report-modal-header:hover {
+    cursor: grab;
+}
+
+.admin-report-modal-header:active {
+    cursor: grabbing;
+}
+
+.admin-modal-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.admin-minimize-modal-btn,
+.admin-close-modal-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10000;
+}
+
+.admin-minimize-modal-btn:hover,
+.admin-close-modal-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-report-modal-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: calc(80vh - 50px);
+    background: #f8f9fa;
+}
+
+.react-draggable-dragging {
+    opacity: 0.8;
+    cursor: move;
+}
+
+.admin-report-info {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.admin-report-info p {
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.admin-report-info p:last-child {
+    border-bottom: none;
+}
+
+.admin-report-info strong {
+    color: #1a237e;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.admin-report-status-pending {
+    color: #f39c12;
+    font-weight: 600;
+    background: #fff3cd;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.admin-report-status-resolved {
+    color: #27ae60;
+    font-weight: 600;
+    background: #d4edda;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.admin-report-status-rejected {
+    color: #e74c3c;
+    font-weight: 600;
+    background: #f8d7da;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.admin-report-actions {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e0e0e0;
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-resolve-btn,
+.admin-reject-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.admin-resolve-btn {
+    background-color: #27ae60;
+    color: white;
+    box-shadow: 0 2px 4px rgba(39, 174, 96, 0.2);
+}
+
+.admin-reject-btn {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+}
+
+.admin-resolve-btn:hover,
+.admin-reject-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-report-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.admin-modal-controls button {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-modal-controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-recipe-details {
+    padding: 2rem;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+.admin-ingredients-section,
+.admin-steps-section {
+    margin-bottom: 3rem;
+}
+
+.admin-ingredients-section h2,
+.admin-steps-section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.admin-ingredient-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.admin-ingredient-item:hover {
+    transform: translateX(5px);
+    background: #f0f0f0;
+}
+
+.admin-ingredient-quantity {
+    color: #666;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.admin-ingredient-name {
+    color: #2c3e50;
+}
+
+.admin-steps-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.admin-step-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    counter-increment: step;
+}
+
+.admin-step-item::before {
+    content: counter(step);
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.admin-step-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-step-content p {
+    margin: 0;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.admin-step-image-container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1rem;
+}
+
+.admin-step-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .admin-ingredients-list {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-step-item::before {
+        left: -30px;
+        width: 24px;
+        height: 24px;
+        font-size: 0.9rem;
+    }
+}
